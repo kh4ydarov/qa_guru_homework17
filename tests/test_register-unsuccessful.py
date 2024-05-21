@@ -1,11 +1,9 @@
 import requests
 from jsonschema import validate
-from schemas.schemas import register_unsuccessful
-
-url = "https://reqres.in"
+from schemas.project import register_unsuccessful
 
 
-def test_put_user():
+def test_put_user(url):
     response = requests.post(f'{url}/api/register', data={"email": "sydney@fife"})
 
     body = response.json()

@@ -1,11 +1,9 @@
 import requests
 from jsonschema import validate
-from schemas.schemas import post_user
-
-url = "https://reqres.in"
+from schemas.project import post_user
 
 
-def test_create_user():
+def test_create_user(url):
     response = requests.post(f'{url}/api/users/', data={"name": "test", "job": "test"})
 
     body = response.json()
